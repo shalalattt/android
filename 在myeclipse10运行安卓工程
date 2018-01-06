@@ -1,0 +1,42 @@
+资源：
+ADT-23.0.7.zip
+android-sdk-windows
+
+安装sdk
+android-sdk-windows\SDK Manager.exe
+勾选tools platform-tools 以及所需的版本 我选了5.0.1 4.2.2 → Install x packages...
+
+配置环境变量
+D:\package\tttt\Android\android-sdk-windows\platform-tools
+D:\package\tttt\Android\android-sdk-windows\tools
+
+不要把解压的ADT-23.0.7.zip里的features和plugins直接拷贝到MyEclipse的plugins下，这样直接不成功
+MyEclipse关联ADT的可靠方法是：
+断网（很重要，否则下面步骤会很慢，而且不一定成功）
+myeclipse - help - MyEclipse Enterprise WorkBenck - SoftWare - Browse SoftWare - add site - name随便写 Add from Archive File（选择ADT-23.0.7.zip）
+这时 Personal Sites里出现了Android ADT 展开前面的向右箭头 把Developer Tools（我的6项）分别右击Add to Files
+这时 SoftWare Updates Available里出现了刚关联的6项 Apply即可
+
+重启MeEclipse
+
+导入安卓工程
+
+右击Run As - Android Application
+
+报错Main : Unsupported major.minor version 51.0
+原因： MyEclipse使用的jre版本过低（我一开始用myeclipse自带的1.6 换成了本地安装的jre1.7即可）
+如果报错version 52.0（需要jre1.8）
+
+报错：Failed to load D:\package\tttt\Android\android-sdk-windows\build-tools\27.0.3
+将android-sdk-windows\build-tools\下的23版本以上的文件夹删掉
+
+报错：Still no compatible AVDs with target 'Android 4.4.2': Aborting launch.
+AVD即Android Virtual Device，它是Android平台的一个虚拟设备。在开始编译Android程序时必须要有一个匹配的虚拟设备，以便呈现出Android的运行界面。
+cmd - 切换到D:\package\tttt\Android\android-sdk-windows\tools\
+android create avd --name <your_avd_name> --target <targetID>  
+例如:  
+android create avd --name yates_AVD --target 2  
+
+----------------------------------------------------
+这个是eclipse下安装android，没试过，看起来不错
+http://blog.csdn.net/dr_neo/article/details/49870587
