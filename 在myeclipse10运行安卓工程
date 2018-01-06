@@ -24,7 +24,7 @@ myeclipse - help - MyEclipse Enterprise WorkBenck - SoftWare - Browse SoftWare -
 右击Run As - Android Application
 
 报错Main : Unsupported major.minor version 51.0
-原因： MyEclipse使用的jre版本过低（我一开始用myeclipse自带的1.6 换成了本地安装的jre1.7即可）
+原因： MyEclipse使用的jre版本过低（我一开始用myeclipse自带的1.6 在MeEclipse关联本地安装的jre1.7 并且在myeclipse.ini里的-vm下写入关联的jre的javaw.exe路径）
 如果报错version 52.0（需要jre1.8）
 
 报错：Failed to load D:\package\tttt\Android\android-sdk-windows\build-tools\27.0.3
